@@ -1,0 +1,64 @@
+---
+---
+<section id="inicio" class="relative h-screen flex items-center justify-center px-6 border-b border-zinc-900 overflow-hidden">
+  <!-- Background Image with zoom animation and overlay -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-black/55 z-10"></div> <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/30 z-10"></div> <!-- Vignette -->
+    <img 
+      src="/images/hotel_hero.png" 
+      alt="Hotel Monolith" 
+      class="w-full h-full object-cover scale-102 animate-[slow-zoom_30s_infinite_alternate] opacity-50 grayscale"
+    />
+  </div>
+
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] z-10"></div>
+
+  <div class="max-w-4xl w-full text-center z-20">
+    <span class="text-[10px] uppercase tracking-[0.4em] text-zinc-500 block mb-6 animate-pulse">Experiencia Sensorial Absoluta</span>
+    <h1 class="font-['Cormorant_Garamond'] text-6xl md:text-8xl font-light tracking-tight text-white mb-8 select-none">
+      MONOLITH
+    </h1>
+    <p class="text-zinc-400 text-sm md:text-base max-w-md mx-auto font-light leading-relaxed tracking-wide mb-12">
+      Arquitectura brutalista, silencio absoluto y confort despojado de lo innecesario en el corazón del altiplano.
+    </p>
+    <button id="cta-btn" class="border border-white/20 hover:border-white text-white uppercase text-xs tracking-[0.3em] px-8 py-4 transition-all duration-500 bg-transparent hover:bg-white hover:text-black font-semibold">
+      Reservar Espacio
+    </button>
+    <p id="response-msg" class="text-[10px] text-zinc-500 mt-4 h-4 tracking-wider transition-all duration-300 font-mono"></p>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-zinc-600 animate-bounce z-20">
+    Desplazar ↓
+  </div>
+</section>
+
+<style>
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1.10);
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('cta-btn');
+  const msg = document.getElementById('response-msg');
+
+  btn?.addEventListener('click', () => {
+    if (msg) {
+      msg.textContent = "CONEXIÓN ESTABLECIDA - REDIRECCIONANDO AL SATELLITE CHECK-IN";
+      msg.classList.add('text-white');
+      
+      // Abre el drawer después de una pequeña pausa
+      setTimeout(() => {
+        msg.textContent = "";
+        msg.classList.remove('text-white');
+        window.dispatchEvent(new Event('open-booking-drawer'));
+      }, 1000);
+    }
+  });
+</script>

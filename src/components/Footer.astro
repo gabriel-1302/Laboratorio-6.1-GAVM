@@ -1,0 +1,70 @@
+---
+---
+
+<footer class="bg-black border-t border-zinc-900 py-20 px-6 text-zinc-500 font-light">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+    <!-- Brand / Coordinates -->
+    <div class="space-y-4">
+      <span class="font-['Cormorant_Garamond'] text-2xl font-bold tracking-widest text-white block">MONOLITH</span>
+      <div class="text-[10px] tracking-wider space-y-1">
+        <p>ALTIPLANO ANDINO</p>
+        <p class="font-mono text-zinc-600">22° 28' 59.8" S, 67° 49' 01.2" O</p>
+        <p class="text-zinc-600">ALTITUD: 3.750 M</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="space-y-4">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 block font-semibold">Navegación</span>
+      <ul class="text-xs space-y-2 uppercase tracking-widest text-zinc-500">
+        <li><a href="#inicio" class="hover:text-white transition-colors duration-300">Inicio</a></li>
+        <li><a href="#filosofia" class="hover:text-white transition-colors duration-300">Filosofía</a></li>
+        <li><a href="#habitaciones" class="hover:text-white transition-colors duration-300">Habitaciones</a></li>
+        <li><a href="#experiencias" class="hover:text-white transition-colors duration-300">Experiencias</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Communications -->
+    <div class="space-y-4">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 block font-semibold">Contacto</span>
+      <ul class="text-xs space-y-2 font-mono">
+        <li><a href="mailto:info@hotelmonolith.com" class="hover:text-white transition-colors duration-300">info@hotelmonolith.com</a></li>
+        <li><span class="text-zinc-600">+591 2 2847000</span></li>
+        <li class="pt-2 text-[10px] uppercase tracking-wider space-x-4">
+          <a href="#" class="hover:text-white transition-colors duration-300">Instagram</a>
+          <span>/</span>
+          <a href="#" class="hover:text-white transition-colors duration-300">Journal</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="space-y-4">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 block font-semibold">Boletín del Silencio</span>
+      <p class="text-[11px] leading-relaxed text-zinc-600">Reciba correspondencia periódica sobre aperturas y retiros filosóficos.</p>
+      <form id="newsletter-form" class="flex border-b border-zinc-800 focus-within:border-zinc-500 transition-colors duration-300 pb-1">
+        <input required type="email" placeholder="Tu dirección de correo" class="bg-transparent text-xs w-full text-white outline-none placeholder-zinc-700 py-1" />
+        <button type="submit" class="text-[10px] uppercase tracking-widest text-zinc-400 hover:text-white transition-colors pl-2">Scribir</button>
+      </form>
+      <span id="newsletter-success" class="hidden block text-[9px] text-emerald-500 uppercase tracking-widest mt-2">Conexión establecida - Suscrito</span>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-900/50 text-[10px] uppercase tracking-widest text-zinc-700 gap-4">
+    <span>Monolith © {new Date().getFullYear()} — Todos los derechos reservados.</span>
+    <span>Diseño Brutalista & SSG</span>
+  </div>
+</footer>
+
+<script>
+  const nForm = document.getElementById('newsletter-form');
+  const nSuccess = document.getElementById('newsletter-success');
+
+  nForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (nSuccess && nForm) {
+      nSuccess.classList.remove('hidden');
+      nForm.classList.add('hidden');
+    }
+  });
+</script>

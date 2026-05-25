@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Philosophy from '../components/Philosophy.astro';
+import Experiences from '../components/Experiences.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Footer from '../components/Footer.astro';
+import BookingDrawer from '../components/BookingDrawer.astro';
+---
+
+<Layout title="MONOLITH | Hotel Minimalista">
+	<main class="bg-black text-[#f5f5f5] min-h-screen">
+		<!-- Navigation Bar -->
+		<nav id="nav-bar" class="fixed top-0 w-full z-40 flex justify-between items-center px-8 py-6 transition-all duration-500 border-b border-transparent">
+			<a href="#inicio" class="font-['Cormorant_Garamond'] text-2xl font-bold tracking-widest text-white">M.</a>
+			
+			<div class="hidden md:flex items-center space-x-12 text-[10px] tracking-[0.3em] uppercase text-zinc-400">
+				<a href="#filosofia" class="hover:text-white transition-colors duration-300">Filosofía</a>
+				<a href="#habitaciones" class="hover:text-white transition-colors duration-300">Habitaciones</a>
+				<a href="#experiencias" class="hover:text-white transition-colors duration-300">Experiencias</a>
+				<a href="#testimonios" class="hover:text-white transition-colors duration-300">Bitácora</a>
+			</div>
+
+			<button class="open-booking text-[10px] tracking-[0.3em] uppercase text-white border border-white/20 hover:border-white px-5 py-2.5 bg-transparent hover:bg-white hover:text-black transition-all duration-500 font-medium">
+				Reservar
+			</button>
+		</nav>
+
+		<!-- Hero Section -->
+		<Hero />
+
+		<!-- Philosophy Section -->
+		<Philosophy />
+
+		<!-- Rooms Section -->
+		<section id="habitaciones" class="py-32 px-6 max-w-5xl mx-auto border-b border-zinc-900">
+			<div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-4">
+				<h2 class="font-['Cormorant_Garamond'] text-3xl md:text-4xl text-zinc-400 font-light tracking-wide italic">01 / Habitaciones de Contemplación</h2>
+				<span class="text-[10px] uppercase tracking-[0.3em] text-zinc-600">Espacios vacíos para mentes llenas</span>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+				<!-- Suite 1 -->
+				<div class="border border-zinc-900 p-8 bg-zinc-950/40 backdrop-blur group hover:border-zinc-800 transition-colors duration-500">
+					<div class="overflow-hidden border border-zinc-900 mb-6 aspect-[4/3] bg-zinc-900 relative">
+						<img 
+							src="/images/suite_sombra.png" 
+							alt="Suite Sombra Lumínica" 
+							class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
+						/>
+						<div class="absolute bottom-4 left-4 bg-black/75 backdrop-blur px-3 py-1.5 border border-zinc-800/80">
+							<span class="text-[9px] uppercase tracking-widest text-zinc-400 font-mono">[ CUBO DE SOMBRA ]</span>
+						</div>
+					</div>
+					<div class="flex justify-between items-baseline mb-2">
+						<h3 class="text-xl font-light tracking-wide text-white">Suite Sombra Lumínica</h3>
+						<span class="text-xs text-zinc-500 font-mono">Desde $450 / noche</span>
+					</div>
+					<p class="text-xs text-zinc-500 leading-relaxed font-light mb-6">
+						Concreto pulido, iluminación cenital y control absoluto del espectro acústico. Un espacio diseñado para aislarse del exterior y sumergirse en la introspección.
+					</p>
+					
+					<!-- Specifications -->
+					<div class="grid grid-cols-3 gap-2 pt-4 border-t border-zinc-900 text-[9px] uppercase tracking-widest text-zinc-500 mb-6">
+						<div>
+							<span class="block text-zinc-600">Área</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">95 m²</span>
+						</div>
+						<div>
+							<span class="block text-zinc-600">Vista</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">Cenital</span>
+						</div>
+						<div>
+							<span class="block text-zinc-600">Aislación</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">100% Acústica</span>
+						</div>
+					</div>
+
+					<button class="open-booking w-full border border-zinc-800 hover:border-white text-zinc-400 hover:text-white uppercase text-[10px] tracking-[0.25em] py-3.5 transition-all duration-500 bg-transparent">
+						Solicitar Estadía
+					</button>
+				</div>
+
+				<!-- Suite 2 -->
+				<div class="border border-zinc-900 p-8 bg-zinc-950/40 backdrop-blur mt-0 md:mt-12 group hover:border-zinc-800 transition-colors duration-500">
+					<div class="overflow-hidden border border-zinc-900 mb-6 aspect-[4/3] bg-zinc-900 relative">
+						<img 
+							src="/images/suite_vacio.png" 
+							alt="Suite Vacío Puro" 
+							class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700 ease-out"
+						/>
+						<div class="absolute bottom-4 left-4 bg-black/75 backdrop-blur px-3 py-1.5 border border-zinc-800/80">
+							<span class="text-[9px] uppercase tracking-widest text-zinc-400 font-mono">[ VACÍO ABSOLUTO ]</span>
+						</div>
+					</div>
+					<div class="flex justify-between items-baseline mb-2">
+						<h3 class="text-xl font-light tracking-wide text-white">Suite Vacío Puro</h3>
+						<span class="text-xs text-zinc-500 font-mono">Desde $550 / noche</span>
+					</div>
+					<p class="text-xs text-zinc-500 leading-relaxed font-light mb-6">
+						Orientación poniente para capturar el ocaso radical sin interferencias visuales. El gran ventanal difumina la frontera entre el refugio y el desierto indómito.
+					</p>
+
+					<!-- Specifications -->
+					<div class="grid grid-cols-3 gap-2 pt-4 border-t border-zinc-900 text-[9px] uppercase tracking-widest text-zinc-500 mb-6">
+						<div>
+							<span class="block text-zinc-600">Área</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">120 m²</span>
+						</div>
+						<div>
+							<span class="block text-zinc-600">Vista</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">Altiplano</span>
+						</div>
+						<div>
+							<span class="block text-zinc-600">Aislación</span>
+							<span class="text-zinc-300 font-medium mt-0.5 block">Térmica / Acús.</span>
+						</div>
+					</div>
+
+					<button class="open-booking w-full border border-zinc-800 hover:border-white text-zinc-400 hover:text-white uppercase text-[10px] tracking-[0.25em] py-3.5 transition-all duration-500 bg-transparent">
+						Solicitar Estadía
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experiences Section -->
+		<Experiences />
+
+		<!-- Testimonials Section -->
+		<Testimonials />
+
+		<!-- Footer Section -->
+		<Footer />
+
+		<!-- Hidden Booking Drawer -->
+		<BookingDrawer />
+	</main>
+</Layout>
+
+<script>
+	const nav = document.getElementById('nav-bar');
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 50) {
+			nav?.classList.add('bg-black/90', 'backdrop-blur-md', 'py-4', 'border-zinc-900/80');
+			nav?.classList.remove('py-6', 'border-transparent');
+		} else {
+			nav?.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-4', 'border-zinc-900/80');
+			nav?.classList.add('py-6', 'border-transparent');
+		}
+	});
+</script>
